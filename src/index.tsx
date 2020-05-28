@@ -6,7 +6,7 @@ import * as serviceWorker from './serviceWorker';
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <App name="TypeScript" enthusiasmLevel={10} />
   </React.StrictMode>,
   document.getElementById('root')
 );
