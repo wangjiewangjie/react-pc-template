@@ -2,11 +2,13 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './styles/reset.css';
 import App from './views/App';
+import Home from './views/Home';
 import * as serviceWorker from './serviceWorker';
 
 ReactDOM.render(
   <React.StrictMode>
     <App name="TypeScript" enthusiasmLevel={10} />
+    <Home/>
   </React.StrictMode>,
   document.getElementById('root')
 );
