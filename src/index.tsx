@@ -1,14 +1,12 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './styles/reset.css';
-import App from './views/App';
-import Home from './views/Home';
+import CommentApp from './views/comment/CommentApp'
 import * as serviceWorker from './serviceWorker';
 
 ReactDOM.render(
   <React.StrictMode>
-    <App name="TypeScript" enthusiasmLevel={10} />
-    <Home/>
+    <CommentApp />
   </React.StrictMode>,
   document.getElementById('root')
 );

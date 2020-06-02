@@ -7,7 +7,7 @@
 
 import { RouteProps } from 'react-router-dom'
 
-import Home from '../views/Home'
+import CommentApp from '../views/comment/CommentApp'
 
 interface PowerRouteProps extends RouteProps {
   name: string;
@@ -15,10 +15,10 @@ interface PowerRouteProps extends RouteProps {
 
 export const _routes = [
   {
-    id: 'Home',
-    name: '首页',
-    path: '/home',
-    component: Home
+    id: 'CommentApp',
+    name: 'CommentApp',
+    path: '/commentapp',
+    component: CommentApp
   }
 ];
 
