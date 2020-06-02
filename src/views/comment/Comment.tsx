@@ -3,9 +3,8 @@ import React, { Component } from 'react'
 class Comment extends Component {
   render() {
     return (
-      <div>
-       Comment
-      </div>
+      // <li><span>{user.username}</span>:{user.comment}</li>
+      <li><span>王劼：</span>reactdemo</li>
     )
   }
 }
