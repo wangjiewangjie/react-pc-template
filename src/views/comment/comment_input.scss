@@ -1,7 +1,6 @@
-.input_wrap {
+.comment-input {
   display: flex;
   margin-bottom: 10px;
-  padding: 10px;
 
   label {
     display: inline-block;
@@ -53,7 +52,7 @@ button {
   box-sizing: border-box;
   outline: none;
   margin: 0;
-  margin-left: 92px;
+  margin-left: 80px;
   transition: .1s;
   font-weight: 500;
   -moz-user-select: none;
