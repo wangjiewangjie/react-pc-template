@@ -8,7 +8,7 @@ class CommentApp extends Component {
     return (
       <div className="comment">
         <CommentInput />
-        <CommentList />
+        <CommentList  name="wang"/>
       </div>
     )
   }
