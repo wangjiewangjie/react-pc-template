@@ -1,5 +1,6 @@
 import * as React from 'react';
 import ToDoListItem from './ToDoListItem';
+import './todolist.scss'
 
 export interface Props {
 
@@ -19,6 +20,9 @@ class ToDoList extends React.Component<Props, State> {
       inputValue: 'wangjie',
       list: ['test1', 'test2']
     }
+
+    this.onChangeInputVlaue = this.onChangeInputVlaue.bind(this)
+    this.onClickAdd = this.onClickAdd.bind(this)
   }
 
   onChangeInputVlaue(e: any) {
@@ -33,19 +37,10 @@ class ToDoList extends React.Component<Props, State> {
     })
   }
 
-  onClickDel(index: number) {
-    console.log(1)
-    let list = this.state.list.splice(index + 1, 1)
-
-    this.setState({
-      list: list
-    })
-  }
-
   render() {
     return (
       <React.Fragment>
-        <div><input type="text" value={this.state.inputValue} onChange={this.onChangeInputVlaue.bind(this)} /><button onClick={this.onClickAdd.bind(this)}>添加</button></div>
+        <div><input className="tdl-input" type="text" value={this.state.inputValue} onChange={this.onChangeInputVlaue} /><button onClick={this.onClickAdd}>添加</button></div>
         <ul>
           {
             this.state.list.map((item, index) => {

@@ -17,7 +17,6 @@ class ToDoListItem extends React.Component<Props, State> {
 
   onClickDel() {
     console.log(this.props.content)
-    
   }
 
   render() {
