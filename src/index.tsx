@@ -1,12 +1,12 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './styles/reset.css';
-import CommentApp from './views/comment/CommentApp'
+import './styles/normalize.css';
 import * as serviceWorker from './serviceWorker';
+import ToDoList from './views/ToDoList'
 
 ReactDOM.render(
   <React.StrictMode>
-    <CommentApp />
+    <ToDoList/>
   </React.StrictMode>,
   document.getElementById('root')
 );

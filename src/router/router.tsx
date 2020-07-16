@@ -6,20 +6,12 @@
  */
 
 import { RouteProps } from 'react-router-dom'
-
-import CommentApp from '../views/comment/CommentApp'
-
 interface PowerRouteProps extends RouteProps {
   name: string;
 }
 
 export const _routes = [
-  {
-    id: 'CommentApp',
-    name: 'CommentApp',
-    path: '/commentapp',
-    component: CommentApp
-  }
+
 ];
 
 // 此处变量我之前使用 routes 命名 结果在index.tsx引入时(import {routes} from './routes') 直接报错
