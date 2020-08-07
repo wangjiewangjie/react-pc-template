@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom';
 import './styles/normalize.css';
 import * as serviceWorker from './serviceWorker';
 import ToDoList from './views/ToDoList'
+import "./mock/index"
 
 ReactDOM.render(
   <React.StrictMode>

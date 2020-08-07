@@ -9,7 +9,7 @@ export interface State {
 
 }
 
-class ToDoListItem extends React.Component<Props, State> {
+class ToDoListItem extends React.PureComponent<Props, State> {
   constructor(Props: Readonly<Props>) {
     super(Props)
     this.onClickDel = this.onClickDel.bind(this)
