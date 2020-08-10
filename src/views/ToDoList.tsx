@@ -1,7 +1,8 @@
 import * as React from 'react';
 import ToDoListItem from './ToDoListItem';
 import './todolist.scss';
-import { dataApi } from '../api/api';
+import { pokemonListApi } from '../api/api';
+import { Form, Input, Button } from 'antd';
 
 /* 
 State 与 Props 区别：
@@ -39,12 +40,12 @@ class ToDoList extends React.PureComponent<Props, State> {
     组件第一次渲染完成，此时dom节点已经生成，可以在这里调用ajax请求，返回数据setState后组件会重新渲染
   */
   componentDidMount() {
-    dataApi({})
+    pokemonListApi({})
       .then((res: any) => {
         console.log(res.data.data)
-      //  this.setState({
-      //   list:l
-      //  })
+        //  this.setState({
+        //   list:l
+        //  })
       })
       .catch((error: any) => {
 
@@ -75,13 +76,15 @@ class ToDoList extends React.PureComponent<Props, State> {
   render() {
     return (
       <React.Fragment>
-        <div>
-          <input className="tdl-input"
-            type="text" value={this.state.inputValue}
-            onChange={this.onChangeInputVlaue}
-          />
-          <button onClick={this.onClickAdd}>添加</button>
-        </div>
+        <Form layout="inline">
+          <Form.Item>
+            <Input placeholder="Basic usage" value={this.state.inputValue}
+              onChange={this.onChangeInputVlaue} />
+          </Form.Item>
+          <Form.Item>
+            <Button type="primary" onClick={this.onClickAdd}>添加</Button>
+          </Form.Item>
+        </Form>
         <ul>
           {
             this.state.list.map((item, index) => {

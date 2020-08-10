@@ -4,7 +4,7 @@ import './styles/normalize.css';
 import * as serviceWorker from './serviceWorker';
 import ToDoList from './views/ToDoList'
 import "./mock/index"
-
+import 'antd/dist/antd.css'
 ReactDOM.render(
   <React.StrictMode>
     <ToDoList/>
