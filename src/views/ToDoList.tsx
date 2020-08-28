@@ -28,8 +28,8 @@ class ToDoList extends React.PureComponent<Props, State> {
     super(Props);
 
     this.state = {
-      inputValue: 'wangjie',
-      list: ['test1', 'test2']
+      inputValue: '',
+      list: []
     }
 
     this.onChangeInputVlaue = this.onChangeInputVlaue.bind(this)
@@ -43,9 +43,9 @@ class ToDoList extends React.PureComponent<Props, State> {
     pokemonListApi({})
       .then((res: any) => {
         console.log(res.data.data)
-        //  this.setState({
-        //   list:l
-        //  })
+        this.setState({
+          list: res.data.data
+        })
       })
       .catch((error: any) => {
 
@@ -89,11 +89,12 @@ class ToDoList extends React.PureComponent<Props, State> {
           {
             this.state.list.map((item, index) => {
               return (
-                <ToDoListItem key={index + item} index={index} content={item} />
+                <ToDoListItem key={index + item} index={index} content={item[2]} />
               )
             })
           }
         </ul>
+
       </React.Fragment>
     );
   }
