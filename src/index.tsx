@@ -2,13 +2,13 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './styles/normalize.css';
 import * as serviceWorker from './serviceWorker';
-import ToDoList from './views/ToDoList'
-import "./mock/index"
+import Demo from './views/demo'
 import 'antd/dist/antd.css'
+import 'antd'
 
 
 ReactDOM.render(
-  <ToDoList/>,
+  <Demo/>,
   document.getElementById('root')
 );
 serviceWorker.unregister();
