@@ -1,3 +1,11 @@
+/*
+ * @Author: wangjiewangjie
+ * @Date: 2020-12-21 10:29:02
+ * @LastEditTime: 2020-12-21 16:14:12
+ * @LastEditors: Please set LastEditors
+ * @Description: In User Settings Edit
+ * @FilePath: \react-pc-template\src\views\basiclayout\BasicLayout.tsx
+ */
 import * as React from 'react'
 import ImageWrap from '../../components/ImageWrap/ImageWrap'
 
@@ -11,7 +19,8 @@ export interface State {
 
 class BasicLayout extends React.Component<Props, State> {
   state = {
-    imageUrl: '',
+    imageUrl:
+      'https://ss0.bdstatic.com/70cFvHSh_Q1YnxGkpoWK1HF6hhy/it/u=1839428146,394280066&fm=26&gp=0.jpg',
     width: 100,
     height: 100,
   }

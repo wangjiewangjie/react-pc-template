@@ -10,26 +10,33 @@ export interface Props {
 export interface State {}
 
 class ImageWrap extends React.Component<Props, State> {
+  static defaultProps = {
+    width: 100,
+    height: 100,
+    imageUrl:
+      'https://ss0.bdstatic.com/70cFvHSh_Q1YnxGkpoWK1HF6hhy/it/u=1839428146,394280066&fm=26&gp=0.jpg',
+  }
+
   constructor(props: Props) {
     super(props)
     this.state = {}
   }
+  
   render() {
-    const width = this.props.width || 100
-    const height = this.props.height || 100
-    const imageUrl =
-      this.props.imageUrl ||
-      'https://ss0.bdstatic.com/70cFvHSh_Q1YnxGkpoWK1HF6hhy/it/u=1839428146,394280066&fm=26&gp=0.jpg'
     return (
       <React.Fragment>
         <div
           className="image-wrap"
           style={{
-            width: `${width}px`,
-            height: `${height}px`,
+            width: `${this.props.width}px`,
+            height: `${this.props.height}px`,
           }}
         >
-          <img style={{ height: `${height}px` }} src={imageUrl} alt="img" />
+          <img
+            style={{ height: `${this.props.height}px` }}
+            src={this.props.imageUrl}
+            alt="img"
+          />
         </div>
       </React.Fragment>
     )
