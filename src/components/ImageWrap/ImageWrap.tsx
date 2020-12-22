@@ -6,10 +6,7 @@ export interface Props {
   width: number
   height: number
 }
-
-export interface State {}
-
-class ImageWrap extends React.Component<Props, State> {
+class ImageWrap extends React.Component<Props> {
   static defaultProps = {
     width: 100,
     height: 100,
@@ -17,11 +14,6 @@ class ImageWrap extends React.Component<Props, State> {
       'https://ss0.bdstatic.com/70cFvHSh_Q1YnxGkpoWK1HF6hhy/it/u=1839428146,394280066&fm=26&gp=0.jpg',
   }
 
-  constructor(props: Props) {
-    super(props)
-    this.state = {}
-  }
-  
   render() {
     return (
       <React.Fragment>

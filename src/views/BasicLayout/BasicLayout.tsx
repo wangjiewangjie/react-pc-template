@@ -1,34 +1,36 @@
-/*
- * @Author: wangjiewangjie
- * @Date: 2020-12-21 10:29:02
- * @LastEditTime: 2020-12-21 17:46:09
- * @LastEditors: Please set LastEditors
- * @Description: In User Settings Edit
- * @FilePath: \react-pc-template\src\views\basiclayout\BasicLayout.tsx
- */
 import * as React from 'react'
+import Header from '../../components/Header/Header'
 import ImageWrap from '../../components/ImageWrap/ImageWrap'
 
 export interface Props {}
 
 export interface State {
-  imageUrl: string
   width: number
   height: number
   imageUrlList: Array<string>
 }
 
 class BasicLayout extends React.Component<Props, State> {
-  state = {
-    imageUrl:
-      'https://ss0.bdstatic.com/70cFvHSh_Q1YnxGkpoWK1HF6hhy/it/u=1839428146,394280066&fm=26&gp=0.jpg',
-    width: 100,
-    height: 100,
-    imageUrlList: [
-      'https://ss0.bdstatic.com/70cFvHSh_Q1YnxGkpoWK1HF6hhy/it/u=1839428146,394280066&fm=26&gp=0.jpg',
-      'https://ss0.bdstatic.com/70cFvHSh_Q1YnxGkpoWK1HF6hhy/it/u=1839428146,394280066&fm=26&gp=0.jpg',
-    ],
+  constructor(props: Props) {
+    super(props)
+
+    this.state = {
+      width: 100,
+      height: 100,
+      imageUrlList: [
+        'https://ss0.bdstatic.com/70cFvHSh_Q1YnxGkpoWK1HF6hhy/it/u=1839428146,394280066&fm=26&gp=0.jpg',
+        'https://ss0.bdstatic.com/70cFvHSh_Q1YnxGkpoWK1HF6hhy/it/u=1839428146,394280066&fm=26&gp=0.jpg',
+      ],
+    }
   }
+  UNSAFE_componentWillMount() {
+    console.log('componentWillMount')
+  }
+
+  componentDidMount() {
+    console.log('componentDidMount')
+  }
+
   handleClick() {
     /* 函数式调用this.setState */
     this.setState((prevState) => {
@@ -46,6 +48,9 @@ class BasicLayout extends React.Component<Props, State> {
   render() {
     return (
       <React.Fragment>
+        <Header>
+          <i>头部</i>
+        </Header>
         {this.state.imageUrlList.map((item, index) => {
           return (
             <ImageWrap
