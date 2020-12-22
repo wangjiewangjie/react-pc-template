@@ -1,5 +1,6 @@
 import * as React from 'react'
 import Header from '../../components/Header/Header'
+import Footer from '../../components/Footer/Footer'
 import ImageWrap from '../../components/ImageWrap/ImageWrap'
 import { timeFormat } from '../../utils/common'
 
@@ -87,6 +88,7 @@ class BasicLayout extends React.Component<Props, State> {
           )
         })}
         <button onClick={this._handleClick.bind(this)}>图片宽高 x2</button>
+        <Footer />
       </React.Fragment>
     )
   }
