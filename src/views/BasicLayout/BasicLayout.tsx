@@ -1,6 +1,7 @@
 import * as React from 'react'
 import Header from '../../components/Header/Header'
 import ImageWrap from '../../components/ImageWrap/ImageWrap'
+import { timeFormat } from '../../utils/common'
 
 export interface Props {}
 
@@ -8,6 +9,7 @@ export interface State {
   width: number
   height: number
   imageUrlList: Array<string>
+  isHeaderShow: boolean
 }
 
 class BasicLayout extends React.Component<Props, State> {
@@ -21,21 +23,28 @@ class BasicLayout extends React.Component<Props, State> {
         'https://ss0.bdstatic.com/70cFvHSh_Q1YnxGkpoWK1HF6hhy/it/u=1839428146,394280066&fm=26&gp=0.jpg',
         'https://ss0.bdstatic.com/70cFvHSh_Q1YnxGkpoWK1HF6hhy/it/u=1839428146,394280066&fm=26&gp=0.jpg',
       ],
+      isHeaderShow: false
     }
   }
-  UNSAFE_componentWillMount() {
-    console.log('componentWillMount')
+
+  UNSAFE_componentWillMount() {}
+
+  componentDidMount() {}
+
+  componentWillUnmount() {}
+
+  _handleHeaderClick() {
+    this.setState({
+      isHeaderShow: !this.state.isHeaderShow,
+    })
   }
 
-  componentDidMount() {
-    console.log('componentDidMount')
-  }
-
-  handleClick() {
+  _handleClick() {
     /* 函数式调用this.setState */
     this.setState((prevState) => {
       return { width: prevState.width * 2, height: prevState.height * 2 }
     })
+
     this.setState((prevState) => {
       console.log(prevState.width)
     })
@@ -45,12 +54,20 @@ class BasicLayout extends React.Component<Props, State> {
     //   height: this.state.height * 2,
     // })
   }
+
   render() {
     return (
       <React.Fragment>
-        <Header>
-          <i>头部</i>
-        </Header>
+        {this.state.isHeaderShow ? (
+          <Header>
+            <i>头部</i>
+            <div className="time">时间</div>
+          </Header>
+        ) : null}
+        <button onClick={this._handleHeaderClick.bind(this)}>
+          控制头部组件显示隐藏
+        </button>
+
         {this.state.imageUrlList.map((item, index) => {
           return (
             <ImageWrap
@@ -61,8 +78,7 @@ class BasicLayout extends React.Component<Props, State> {
             ></ImageWrap>
           )
         })}
-
-        <button onClick={this.handleClick.bind(this)}>图片宽高 x2</button>
+        <button onClick={this._handleClick.bind(this)}>图片宽高 x2</button>
       </React.Fragment>
     )
   }
