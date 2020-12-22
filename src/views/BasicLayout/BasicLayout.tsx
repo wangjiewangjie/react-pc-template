@@ -10,6 +10,7 @@ export interface State {
   height: number
   imageUrlList: Array<string>
   isHeaderShow: boolean
+  time: string
 }
 
 class BasicLayout extends React.Component<Props, State> {
@@ -23,11 +24,18 @@ class BasicLayout extends React.Component<Props, State> {
         'https://ss0.bdstatic.com/70cFvHSh_Q1YnxGkpoWK1HF6hhy/it/u=1839428146,394280066&fm=26&gp=0.jpg',
         'https://ss0.bdstatic.com/70cFvHSh_Q1YnxGkpoWK1HF6hhy/it/u=1839428146,394280066&fm=26&gp=0.jpg',
       ],
-      isHeaderShow: false
+      isHeaderShow: false,
+      time: timeFormat(null, 'yyyy-MM-dd hh-mm-ss'),
     }
   }
 
-  UNSAFE_componentWillMount() {}
+  UNSAFE_componentWillMount() {
+    setInterval(() => {
+      this.setState({
+        time: timeFormat(null, 'yyyy-MM-dd hh:mm:ss'),
+      })
+    }, 1000)
+  }
 
   componentDidMount() {}
 
@@ -61,7 +69,7 @@ class BasicLayout extends React.Component<Props, State> {
         {this.state.isHeaderShow ? (
           <Header>
             <i>头部</i>
-            <div className="time">时间</div>
+            <div className="time">{this.state.time}</div>
           </Header>
         ) : null}
         <button onClick={this._handleHeaderClick.bind(this)}>
